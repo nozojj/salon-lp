@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function StyleGallery() {
   const styles = [
-    "ナチュラルボブ",
-    "透明感カラー",
-    "ゆるふわロング",
-    "ショートスタイル",
+    { name: "ナチュラルボブ", img: "/images/style/bob.jpg" },
+    { name: "透明感カラー", img: "/images/style/color.jpg" },
+    { name: "ゆるふわロング", img: "/images/style/long.jpg" },
+    { name: "ショートスタイル", img: "/images/style/short.jpg" },
   ];
 
   return (
@@ -16,9 +18,19 @@ export default function StyleGallery() {
         {styles.map((style, i) => (
           <div
             key={i}
-            className="h-56 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#8b7d74]"
+            className="rounded-2xl overflow-hidden bg-white shadow-sm"
           >
-            {style}
+            <Image
+              src={style.img}
+              alt={style.name}
+              width={300}
+              height={200}
+              className="w-full hover:scale-105 transition duration-300 h-[180px] object-cover"
+            />
+
+            <p className="text-center py-3 text-[#8b7d74]">
+              {style.name}
+            </p>
           </div>
         ))}
       </div>

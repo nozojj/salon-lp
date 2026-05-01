@@ -1,6 +1,7 @@
 import Concept from "@/components/Concept";
 import Hero from "@/components/Hero";
 import Menu from "@/components/Menu";
+import ReservationForm from "@/components/ReservationForm";
 import ShopInfo from "@/components/ShopInfo";
 import Staff from "@/components/Staff";
 import StyleGallery from "@/components/StyleGallery";

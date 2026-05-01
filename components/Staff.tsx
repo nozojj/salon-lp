@@ -1,14 +1,18 @@
+import Image from "next/image";
+
 export default function Staff() {
   const staffs = [
     {
       name: "Yuri",
       role: "Stylist",
       desc: "ナチュラルで扱いやすいスタイルが得意です。",
+      img: "/images/staff/yuri.jpg",
     },
     {
       name: "Mika",
       role: "Colorist",
       desc: "透明感カラーや柔らかい色味をご提案します。",
+      img: "/images/staff/mika.jpg",
     },
   ];
 
@@ -26,14 +30,24 @@ export default function Staff() {
         {staffs.map((staff) => (
           <div
             key={staff.name}
-            className="rounded-2xl border border-[#e5e0da] p-6 text-center"
+            className="rounded-2xl border border-[#e5e0da] p-6 text-center hover:shadow-md transition"
           >
-            <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-[#f8f5f0]" />
+            <div className="mx-auto mb-4 h-24 w-24 rounded-full overflow-hidden">
+              <Image
+                src={staff.img}
+                alt={staff.name}
+                width={100}
+                height={100}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <p className="text-sm text-[#8b7d74]">{staff.role}</p>
+
             <h3 className="mt-1 text-xl font-semibold text-[#3f342e]">
               {staff.name}
             </h3>
+
             <p className="mt-3 text-sm text-[#6f625a] leading-relaxed">
               {staff.desc}
             </p>
